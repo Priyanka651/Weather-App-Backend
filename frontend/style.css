@@ -1,0 +1,155 @@
+/* ✅ Reset default spacing */
+body {
+  margin: 0;
+  padding: 40px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;   /* Stack form + boxes vertically */
+  align-items: center;
+  background-color: #f3f6fb;
+  font-family: Arial, sans-serif;
+}
+
+
+
+/* ✅ Form styling (already working) */
+form {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+/* ✅ Center the heading */
+form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ✅ Input styling */
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+/* ✅ Button styling */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+/* ✅ ✅ ✅ APPLY SAME BOX STYLE TO BOTH DIV SECTIONS */
+body > div {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 550px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+/* ✅ Center headings inside both divs */
+body > div h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ✅ ✅ Style your weather table nicely (without changing HTML) */
+#weatherTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#weatherTable th {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px;
+}
+
+#weatherTable td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #f9fafb;
+}
+
+/* ✅ Make update section inputs align better */
+body > div input {
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/* 📌 Make ONLY the table section wider */
+.table-container {
+  width: 50%;         /* Full width */
+  max-width: 1100px;  /* Prevent too wide */
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+
+
+.autocomplete-box {
+    position: absolute;
+    background: white;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: none;  /* Hidden until suggestions appear */
+    z-index: 10;
+}
+
+.autocomplete-box div {
+    padding: 8px;
+    cursor: pointer !important;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+.autocomplete-box div:hover {
+    background-color: #f0f0f0;
+}
+/* AUTOCOMPLETE DROPDOWN */
+#location_suggestions {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 250px;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    z-index: 999;
+}
+
+.suggestion-item {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background: #f0f0f0;
+}
+.footer {
+  text-align: center;
+  background-color: #e2e8f0;
+  padding: 15px;  
+} 

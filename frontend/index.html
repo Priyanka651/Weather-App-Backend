@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weather-App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- WEATHER FORM -->
+<form id="weather-form">
+    <h1>Weather-App</h1>
+
+    <label for="LocalInput">Enter Location:</label>
+    <input type="text" id="LocalInput" placeholder="e.g. London,UK"><br><br>
+
+    <div id="location_suggestions" class="autocomplete-box"></div>
+<br><br>
+
+    <label for="StartDate">Start Date</label>
+    <input type="date" id="StartDate"><br><br>
+
+    <label for="EndDate">End Date</label>
+    <input type="date" id="EndDate"><br><br>
+
+    <button type="submit">Get Weather</button>
+</form>
+
+
+
+<!-- WEATHER RESULT BOX -->
+<div class="box">
+    <h2>Weather Result</h2>
+    <div id="weatherResult"></div>
+</div>
+
+
+<!-- CURRENT LOCATION BOX -->
+<div class="box">
+    <h2>Weather From Your Current Location</h2>
+
+    <button id="currentLocationBtn"
+            style="background:#4CAF50;color:white;padding:10px;margin-bottom:10px;">
+        Get Weather From My Current Location
+    </button>
+
+    <div id="currentLocationResult"></div>
+</div>
+
+
+<!-- ALL WEATHER RECORDS BOX -->
+<div class="table-container">
+    <h2>All Weather Records Here:</h2>
+
+    <button id="viewRecordsBtn">View All Weather Records</button><br><br>
+
+    <table id="weatherTable">
+        <thead>
+        <tr>
+            <th>Location</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Temperature</th>
+            <th>Description</th>
+            <th>Humidity</th>
+            <th>Wind Speed</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <br>
+
+    <label for="downloadFormat">Select Format:</label>
+    <select id="downloadFormat">
+        <option value="json">JSON</option>
+        <option value="csv">CSV</option>
+        <option value="md">Markdown</option>
+    </select>
+
+    <button id="downloadBtn" style="margin-top:10px;">Download Weather Records</button>
+</div>
+
+
+<!-- UPDATE RECORD BOX -->
+<div class="box">
+    <h2>Update Weather Record</h2>
+
+    <label for="Location">Enter Location:</label>
+    <input type="text" id="Location"><br><br>
+
+    <label for="Date">Date:</label>
+    <input type="text" id="Date"><br><br>
+
+    <label for="Temperature">Temperature (°C):</label>
+    <input type="text" id="Temperature"><br><br>
+
+    <label for="Description">Description:</label>
+    <input type="text" id="Description"><br><br>
+
+    <label for="Humidity">Humidity:</label>
+    <input type="text" id="Humidity"><br><br>
+
+    <label for="WindSpeed">Wind Speed (km/h):</label>
+    <input type="text" id="WindSpeed"><br><br>
+
+    <button id="updateBtn">Update Weather Record</button>
+</div>
+
+
+<!-- FOOTER OUTSIDE ALL BOXES -->
+<footer class="footer">
+    <p>© 2025 Weather App | Built by Priyanka<br> PM Accelerator 
+        
+    <a href="https://www.pmaccelerator.io/">Website Link</a><br><br>
+  <strong>PM Accelerator</strong><br>The Product Manager Accelerator Program is designed to support PM professionals through every stage of their careers.
+   From students looking for entry-level jobs to Directors seeking leadership roles, our program has helped hundreds of students achieve their career aspirations.
+    Our Product Manager Accelerator community is ambitious and committed. 
+    Through our program, participants have learned, honed, and developed new PM and leadership skills, 
+  giving them a strong foundation for future endeavors. Learn more on our Website. </p>
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
