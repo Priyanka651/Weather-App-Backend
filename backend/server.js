@@ -4,14 +4,11 @@ import { connectDB } from "./config/db.js";
 import cors from "cors";
 import weatherRoutes from "./routes/weatherRoutes.js";
 
-app.use(cors({
-  origin: "*",
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type"
-}));
-
 const app=express()
 dotenv.config()
+
+
+
 
 
 // middlewares
