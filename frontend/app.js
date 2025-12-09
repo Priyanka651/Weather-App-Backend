@@ -6,7 +6,9 @@ const form = document.getElementById("weather-form");
 const resultDiv = document.getElementById("weatherResult");
 
 // Backend URL
-const BASE_URL = "http://localhost:4002/api/weather";
+// const BASE_URL = "http://localhost:4002/api/weather";
+const BASE_URL = "https://weather-app-backend-2hcd.onrender.com/api/weather";
+
 
 
 // AUTOCOMPLETE VARIABLES
@@ -248,7 +250,12 @@ document.addEventListener("click", async function (event) {
         const weather = record.temperatures[0];
 
         document.getElementById("Location").value = record.locationInput;
-        document.getElementById("Date").value = record.startDate.split("T")[0];
+        document.getElementById("StartDateUpdate").value =
+        record.startDate.split("T")[0];
+
+        document.getElementById("EndDateUpdate").value =
+        record.endDate.split("T")[0];
+
         document.getElementById("Temperature").value = weather.temp;
         document.getElementById("Description").value = weather.description;
         document.getElementById("Humidity").value = weather.humidity ?? "";
@@ -276,6 +283,8 @@ updateBtn.addEventListener("click", async () => {
 
     const updatedData = {
         location: document.getElementById("Location").value,
+         "startDate": document.getElementById("StartDateUpdate").value,
+         "endDate": document.getElementById("EndDateUpdate").value,
         temp: document.getElementById("Temperature").value,
         description: document.getElementById("Description").value,
         humidity: document.getElementById("Humidity").value,
