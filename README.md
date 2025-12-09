@@ -141,7 +141,7 @@ Weather properties fetched:
 - Description
 - Humidity
 - Wind Speed
-- Date range
+- Date range: Start date and end date
 - Only provided fields are updated
 - Other fields remain unchanged
   
@@ -266,7 +266,8 @@ If MongoDB fails → confirm:
 -Correct connection string
 -IP whitelist in MongoDB Atlas
 ```
-# Open the app in your browser:
+# Open the app in your browser: Deployed on Render App
+https://weather-app-frontend-op5t.onrender.com
 
 
 🧑‍💻 Developer Info
