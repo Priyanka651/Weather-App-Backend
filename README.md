@@ -30,27 +30,34 @@ A full-stack weather forecasting application that lets users search weather by l
 - Delete records
 - Export data into JSON, CSV, Markdown
 - View Google Maps location link
+  
 This project simulates a real-world full-stack software engineering workflow with API-driven forecasting features.
 # 📌  Features
 
-# ⭐Frontend Features
+<h2>⭐Frontend Features</h2>
 
 <strong>🌍 Search 5-Day Weather Forecast </strong>
 - Users can enter a location (City, Country, ZIP, Landmark, Coordinates)
 - Autocomplete suggestions powered by OpenWeather Geocoding API
-- Validates a strict 1–5 day date range and shows:
+- Validates a strict 1–5 day date range
+
+  and shows:
+  
 - Temperature
 - Weather description
 - Humidity
 - Wind Speed
 - Daily forecast for selected date range
 - Google Maps link for location
+
   
 <strong>📍Current Location Weather (GPS) </strong>
 - Browser Geolocation API retrieves user coordinates
 - Backend calls OpenWeather “Current Weather API”
 
-<strong>📚CRUD Operations</strong>
+
+
+<h2>📚CRUD Operations</h2>
 
 <b>1. GET WEATHER (Create Record)</b> 
 - User enters a location + date range →
@@ -63,15 +70,17 @@ This project simulates a real-world full-stack software engineering workflow wit
 - Users can view all stored weather records in tabular format.
 
 <b> 4. DELETE DATA </b>
-Users remove incorrect or outdated weather records.
+- Users remove incorrect or outdated weather records.
 
 <b> 5. EXPORT DATA </b>
+
 User can download all data as:
 - JSON
 - CSV
 - Markdown
 
 <b> 6. UPDATE DATA </b>
+
 Users update:
 - Location
 - Date
@@ -81,8 +90,10 @@ Users update:
 - Wind speed
 
 <strong>📈Smart Date Validation</strong>
+
 <b>Frontend calendar restricts dates to:</b>
 - Tomorrow → Tomorrow + 4 days (total 5 days)
+  
 Both frontend and backend strictly enforce a 1–5 day date range: the calendars only allow selecting tomorrow through tomorrow + 4 days, and the backend rejects any request where the date range is invalid or longer than 5 days.
 
 
@@ -159,9 +170,23 @@ weather-app/
 │
 └── README.md
 ```
-# ⭐ Backend Features
+<h2>⭐ Backend Features</h2>
 
-<b>✔ POST /api/weather — Create Weather Record<b>
+<h3>API Endpoints</h3>
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST   | /api/weather | Create weather record |
+| GET    | /api/weather | Retrieve all records |
+| PUT    | /api/weather/:id | Update record |
+| DELETE | /api/weather/:id | Delete record |
+| GET    | /api/weather/export/:format | Export JSON / CSV / Markdown |
+| GET    | /api/weather/suggest?q= | Autocomplete city search |
+| POST   | /api/weather/current | Weather using GPS coordinates |
+
+
+<b>✔ POST /api/weather — Create Weather Record</b>
+
 - Receives: location, startDate, endDate
 - Validates date range (1–5 days)
 - Fetches forecast from OpenWeather → filters relevant dates
@@ -175,9 +200,11 @@ Stores in MongoDB:
 Notes: Only the forecast days within the selected date range are stored in MongoDB.
 
 <b>✔ GET /api/weather — Read All records </b>
+
 - Returns all records sorted by date.
 
 <b>✔ PUT /api/weather/:id — Update</b>
+
 Users can update:
 - Location
 - Temperature
@@ -197,6 +224,7 @@ Removes a weather record after user confirmation.
 - Returns a success message to the frontend.
 
 <b>✔ GET /api/weather/export/:format — Export</b>
+
 Supports:
 - json
 - csv
@@ -204,26 +232,16 @@ Supports:
 Exported files include only the first day’s temperature details for each record, for simplicity.
 
 ✔ GET /api/weather/suggest?q=Lon
+
 - Autocomplete suggestions using OpenWeather’s Geocoding API.
 
 ✔ POST /api/weather/current
-- Fetches weather for user's actual location using GPS.
-  
-<h1>API Endpoints</h1>
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST   | /api/weather | Create weather record |
-| GET    | /api/weather | Retrieve all records |
-| PUT    | /api/weather/:id | Update record |
-| DELETE | /api/weather/:id | Delete record |
-| GET    | /api/weather/export/:format | Export JSON / CSV / Markdown |
-| GET    | /api/weather/suggest?q= | Autocomplete city search |
-| POST   | /api/weather/current | Weather using GPS coordinates |
+- Fetches weather for user's actual location using GPS.
+
+<h2>Database Structure</h2>
 
 ```bash
-
-
 Input:
 {
   "location": "San Francisco, California",
@@ -314,9 +332,12 @@ frontend/index.html
 ```
 No additional setup required.
 
-🧪 Debugging Notes
+<b>🧪 Debugging Notes</b>
 
-If environment variables don’t load → ensure:
+If environment variables don’t load →
+
+ensure:
+
 ✔ MongoDB Troubleshooting
 - Ensure you whitelist your IP in MongoDB Atlas
 - Connection string must include correct database name
