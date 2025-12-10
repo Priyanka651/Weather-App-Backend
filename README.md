@@ -22,7 +22,7 @@ A full-stack weather forecasting application that lets users search weather by l
 
 # 📌  Project Overview
 - Enter any location (city, ZIP code, coordinates, landmarks — via autocomplete)
-- Retrieve real real-time weather and 5-day forecast
+- Retrieve a filtered 5-day forecast based on the selected date range
 - Get weather from the user’s GPS location
 - Select a date range (1–5 days) and store results
 - View all historical weather records
@@ -30,8 +30,7 @@ A full-stack weather forecasting application that lets users search weather by l
 - Delete records
 - Export data into JSON, CSV, Markdown
 - View Google Maps location link
-This project is designed to simulate real AI/ML product development, showcasing backend logic, frontend interaction, and smart API-driven features.
-
+This project simulates a real-world full-stack software engineering workflow with API-driven forecasting features.
 # 📌  Features
 
 # ⭐Frontend Features
@@ -161,10 +160,13 @@ weather-app/
 # ⭐ Backend Features
 
 <b>✔ POST /api/weather — Create Weather Record<b>
+“Only the forecast days within the selected date range are stored in MongoDB.”
 - Receives: location, startDate, endDate
 - Validates date range (1–5 days)
-- Fetches forecast from OpenWeather → filters relevant dates
 - Builds Google Maps URL
+- Fetches forecast from OpenWeather → filters relevant dates  
+The backend extracts one forecast per day at 12:00 PM from OpenWeather’s 3-hour interval 5-day API.
+
   
 - Stores in MongoDB:
 - Temperature
@@ -186,7 +188,8 @@ Users can update:
 - Date range: Start date and end date
 - Only provided fields are updated
 - Other fields remain unchanged
-  
+Note: Updating a record does NOT refetch weather data from OpenWeather. Only the first saved temperature entry is updated manually.
+
 <b>✔ DELETE /api/weather/:id — Delete</b>
 
 Removes a weather record after user confirmation.
@@ -199,6 +202,7 @@ Supports:
 - json
 - csv
 - md
+Exported files include only the first day’s temperature details for each record, for simplicity.
 
 ✔ GET /api/weather/suggest?q=Lon
 - Autocomplete suggestions using OpenWeather’s Geocoding API.
