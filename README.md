@@ -167,7 +167,7 @@ weather-app/
 - Fetches forecast from OpenWeather → filters relevant dates
 - The backend extracts one forecast per day at 12:00 PM from OpenWeather’s 3-hour interval 5-day API.
 - Builds Google Maps URL
-“Only the forecast days within the selected date range are stored in MongoDB.”
+ Notes: Only the forecast days within the selected date range are stored in MongoDB.
 
 
   
@@ -176,7 +176,6 @@ weather-app/
 - Description
 - Humidity
 - Wind speed
-- Saves cleaned data to MongoDB
 
 <b>✔ GET /api/weather — Read All records </b>
 - Returns all records sorted by date.
@@ -215,20 +214,18 @@ Exported files include only the first day’s temperature details for each recor
   
 <h1>API Endpoints</h1>
 
-```sql
-| Method | Endpoint                    | Description                  |
-|--------|-----------------------------|------------------------------|
-| POST   | /api/weather                | Create weather record        |
-| GET    | /api/weather                | Retrieve all records         |
-| PUT    | /api/weather/:id            | Update record                |
-| DELETE | /api/weather/:id            | Delete record                |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST   | /api/weather | Create weather record |
+| GET    | /api/weather | Retrieve all records |
+| PUT    | /api/weather/:id | Update record |
+| DELETE | /api/weather/:id | Delete record |
 | GET    | /api/weather/export/:format | Export JSON / CSV / Markdown |
-| GET    | /api/weather/suggest?q=     | Autocomplete city search     |
-| POST   | /api/weather/current        | Weather using GPS coordinates|
-
-```
+| GET    | /api/weather/suggest?q= | Autocomplete city search |
+| POST   | /api/weather/current | Weather using GPS coordinates |
 
 ```bash
+
 
 Input:
 {
