@@ -4,6 +4,11 @@ Designed for the PM Accelerator — AI Engineer Intern Technical Assessment
 
 A full-stack weather forecasting application that lets users search weather by location, fetch a 5-day forecast, get current location weather, store results in a database, update and delete records, export weather data, and benefit from intelligent features like autocomplete suggestions, dynamic date validation, and Google Maps integration.
 
+## Live Demo
+-Frontend: https://weather-app-frontend-op5t.onrender.com
+-Backend API: https://weather-app-backend-2hcd.onrender.com/api/weather
+
+
 # The project demonstrates:
 - Frontend engineering (Tech Assessment #1)
 - Backend engineering (Tech Assessment #2)
@@ -27,18 +32,25 @@ A full-stack weather forecasting application that lets users search weather by l
 This project is designed to simulate real AI/ML product development, showcasing backend logic, frontend interaction, and smart API-driven features.
 
 # 📌  Features
-⭐ Frontend Features
+<h1>⭐Frontend Features</h1>
 
-🌍 Search 5-Day Weather Forecast
-- Users can enter a location (City, Country, ZIP, Landmark, Coordinates) and view:
+<strong>🌍 Search 5-Day Weather Forecast </strong>
+- Users can enter a location (City, Country, ZIP, Landmark, Coordinates)
+  Autocomplete suggestions powered by OpenWeather Geocoding API
+  Validates a strict 1–5 day date range and shows:
 - Temperature
 - Weather description
 - Humidity
 - Wind Speed
 - Daily forecast for selected date range
 - Google Maps link for location
+  
+<strong>📍 2. Current Location Weather (GPS) </strong>
+- Browser Geolocation API retrieves user coordinates
+- Backend calls OpenWeather “Current Weather API”
 
-# 📘 Use Cases
+<strong>📚 3. CRUD Operations</strong>
+
 <b>1. GET WEATHER (Create Record)</b> 
 - User enters a location + date range →
 - App fetches a filtered 5-day forecast and saves it to MongoDB.
@@ -67,6 +79,13 @@ Users update:
 - Humidity
 - Wind speed
 
+<strong>📈 5. Smart Date Validation</strong>
+<b>Frontend calendar restricts dates to:<b>
+- Tomorrow → Tomorrow + 4 days (total 5 days)
+
+<strong>🗺 6. Google Maps Integration </strong>
+- Every record includes a clickable location link.
+  
   # 📌  Tech Stack
 
 <b> Frontend</b>
@@ -82,31 +101,15 @@ Users update:
 - Axios (API calls)
 
 <b> External APIs Used</b>
-- Geocoding (location search)
-- 5-day forecast
-- Current weather
+- OpenWeather 5-Day Forecast
+- OpenWeather Geocoding (Autocomplete)
+- OpenWeather Current Weather
+- Google Maps Search URL
 
 <b> Other Tools</b>
 - JSON, CSV, Markdown exporters
 - dotenv for environment variables
 - Browser Geolocation API
-
-<strong>✔ Installation & Project Structure</strong>
-```bash
-backend/
-│── config/db.js
-│── routes/weatherRoutes.js
-│── services/weatherService.js
-│── services/exportService.js
-│── models/WeatherRequest.js
-│── server.js
-frontend/
-│── index.html
-│── app.js
-│── style.css
-.env.example
-gitignore
-```
 
 # API Integrations
 1. OpenWeatherMap API
@@ -126,10 +129,34 @@ Weather properties fetched:
 
 3. Geolocation API
 - Fetches weather of user’s current location.
-- 
+<strong>✔ Installation & Project Structure</strong>
+
+```bash
+weather-app/
+│
+├── backend/
+│   ├── config/
+│   │   └── db.js
+│   ├── models/
+│   │   └── WeatherRequest.js
+│   ├── routes/
+│   │   └── weatherRoutes.js
+│   ├── services/
+│   │   ├── weatherService.js
+│   │   └── exportService.js
+│   ├── server.js
+│   ├── package.json
+│
+├── frontend/
+│   ├── index.html
+│   ├── app.js
+│   └── style.css
+│
+└── README.md
+```
 # ⭐ Backend Features
 
-✔ POST /api/weather — Create Weather Record
+<b>✔ POST /api/weather — Create Weather Record<b>
 - Receives: location, startDate, endDate
 - Validates date range (1–5 days)
 - Fetches forecast from OpenWeather → filters relevant dates
@@ -142,11 +169,11 @@ Weather properties fetched:
 - Wind speed
 - Saves cleaned data to MongoDB
 
-✔ GET /api/weather — Read All 
+<b>✔ GET /api/weather — Read All records </b>
 - Returns all records sorted by date.
 
-✔ PUT /api/weather/:id — Update
-- Users can update:
+<b>✔ PUT /api/weather/:id — Update</b>
+<h2>Users can update:</h2>
 - Location
 - Temperature
 - Description
@@ -156,13 +183,13 @@ Weather properties fetched:
 - Only provided fields are updated
 - Other fields remain unchanged
   
-✔ DELETE /api/weather/:id — Delete
-Removes a weather record after user confirmation.
+<b>✔ DELETE /api/weather/:id — Delete</b>
+<h2> Removes a weather record after user confirmation.</h2>
 - Receives the unique record id from the frontend when user clicks on delete button for a particular record.
 - Deletes the corresponding record in the database after user confirmation.
 - Returns a success message to the frontend.
 
-✔ GET /api/weather/export/:format — Export
+<b>✔ GET /api/weather/export/:format — Export</b>
 Supports:
 - json
 - csv
@@ -173,8 +200,20 @@ Supports:
 
 ✔ POST /api/weather/current
 - Fetches weather for user's actual location using GPS.
-
-<h2>🗄️ Database Structure (MongoDB Document)</h2>
+  
+<h1>API Endpoints</h1>
+```bash
+| Method | Endpoint                    | Description               |
+|--------|-----------------------------|---------------------------|
+| POST   | /api/weather                | Create weather record     |
+| GET    | /api/weather                | Retrieve all records      |
+| GET    | /api/weather/:id            | Retrieve single record    |
+| PUT    | /api/weather/:id            | Update record             |
+| DELETE | /api/weather/:id            | Delete record             |
+| GET    | /api/weather/export/:format | Export JSON / CSV / Markdown |
+| GET    | /api/weather/suggest?q=     | Autocomplete city search |
+| POST   | /api/weather/current        | Weather using GPS coordinates |
+```
 
 ```bash
 
@@ -247,7 +286,7 @@ cd Weather-App
 ```bash
 MONGODB_URI=your_mongo_connection_string
 OPENWEATHER_API_KEY=your_api_key
-PORT=4002
+PORT=4000
 ```
 
 4. Start the Backend Server
@@ -257,7 +296,7 @@ npm start
 
 5. Backend runs at:
 ```bash
-http://localhost...
+http://localhost:4000/api/weather
 ```
 
 6. Run Frontend
@@ -265,29 +304,25 @@ http://localhost...
 Simply open:
 ```bash
 frontend/index.html
-No additional setup required.
 ```
+No additional setup required.
+
 🧪 Debugging Notes
 
 If environment variables don’t load → ensure:
-```bash
-npm install dotenv
+✔ MongoDB Troubleshooting
+- Ensure you whitelist your IP in MongoDB Atlas
+- Connection string must include correct database name
+- dotenv must be installed
+✔ Common Deployment Issues
+- CORS errors → fix by enabling app.use(cors())
+- Render must include environment variables
+- Ensure "type": "module" is in package.json
 
-If MongoDB fails → confirm:
--Correct connection string
--IP whitelist in MongoDB Atlas
-```
-# Open the app in your browser: Deployed on Render App
-https://weather-app-frontend-op5t.onrender.com
+<b>🧑‍💻 Developer </b>
+<b>Built By:<b> Priyanka
+<b> Role:</b>AI Engineer Intern Candidate — PM Accelerator
+<b>Program Description:<b>Product Manager Accelerator — Building practical PM & engineering skills
+<b>Website:</b>https://www.pmaccelerator.io/
 
 
-🧑‍💻 Developer Info
-
-Built By: Priyanka
-AI Engineer Intern Candidate — PM Accelerator
-
-Program Description:
-The Product Manager Accelerator Program guides professionals through every stage of their PM career.
-From entry roles to leadership, PMA has helped hundreds of students learn practical and impactful PM skills.
-
-Website: https://www.pmaccelerator.io/
