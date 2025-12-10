@@ -33,7 +33,8 @@ A full-stack weather forecasting application that lets users search weather by l
 This project is designed to simulate real AI/ML product development, showcasing backend logic, frontend interaction, and smart API-driven features.
 
 # 📌  Features
-<h1>⭐Frontend Features</h1>
+
+# ⭐Frontend Features
 
 <strong>🌍 Search 5-Day Weather Forecast </strong>
 - Users can enter a location (City, Country, ZIP, Landmark, Coordinates)
@@ -46,11 +47,11 @@ This project is designed to simulate real AI/ML product development, showcasing 
 - Daily forecast for selected date range
 - Google Maps link for location
   
-<strong>📍 2. Current Location Weather (GPS) </strong>
+<strong>📍Current Location Weather (GPS) </strong>
 - Browser Geolocation API retrieves user coordinates
 - Backend calls OpenWeather “Current Weather API”
 
-<strong>📚 3. CRUD Operations</strong>
+<strong>📚CRUD Operations</strong>
 
 <b>1. GET WEATHER (Create Record)</b> 
 - User enters a location + date range →
@@ -80,14 +81,14 @@ Users update:
 - Humidity
 - Wind speed
 
-<strong>📈 5. Smart Date Validation</strong>
+<strong>📈Smart Date Validation</strong>
 <b>Frontend calendar restricts dates to:<b>
 - Tomorrow → Tomorrow + 4 days (total 5 days)
 
-<strong>🗺 6. Google Maps Integration </strong>
+<strong>🗺 Google Maps Integration </strong>
 - Every record includes a clickable location link.
   
-  # 📌  Tech Stack
+  # 📌Tech Stack
 
 <b> Frontend</b>
 - HTML5
@@ -130,6 +131,8 @@ Weather properties fetched:
 
 3. Geolocation API
 - Fetches weather of user’s current location.
+
+  
 <strong>✔ Installation & Project Structure</strong>
 
 ```bash
@@ -174,7 +177,7 @@ weather-app/
 - Returns all records sorted by date.
 
 <b>✔ PUT /api/weather/:id — Update</b>
-<h2>Users can update:</h2>
+Users can update:
 - Location
 - Temperature
 - Description
@@ -185,7 +188,8 @@ weather-app/
 - Other fields remain unchanged
   
 <b>✔ DELETE /api/weather/:id — Delete</b>
-<h2> Removes a weather record after user confirmation.</h2>
+
+Removes a weather record after user confirmation.
 - Receives the unique record id from the frontend when user clicks on delete button for a particular record.
 - Deletes the corresponding record in the database after user confirmation.
 - Returns a success message to the frontend.
@@ -203,17 +207,18 @@ Supports:
 - Fetches weather for user's actual location using GPS.
   
 <h1>API Endpoints</h1>
+
 ```bash
-| Method | Endpoint                    | Description               |
-|--------|-----------------------------|---------------------------|
-| POST   | /api/weather                | Create weather record     |
-| GET    | /api/weather                | Retrieve all records      |
-| GET    | /api/weather/:id            | Retrieve single record    |
-| PUT    | /api/weather/:id            | Update record             |
-| DELETE | /api/weather/:id            | Delete record             |
+| Method | Endpoint                    | Description                  |
+|--------|-----------------------------|------------------------------|
+| POST   | /api/weather                | Create weather record        |
+| GET    | /api/weather                | Retrieve all records         |
+| PUT    | /api/weather/:id            | Update record                |
+| DELETE | /api/weather/:id            | Delete record                |
 | GET    | /api/weather/export/:format | Export JSON / CSV / Markdown |
-| GET    | /api/weather/suggest?q=     | Autocomplete city search |
-| POST   | /api/weather/current        | Weather using GPS coordinates |
+| GET    | /api/weather/suggest?q=     | Autocomplete city search     |
+| POST   | /api/weather/current        | Weather using GPS coordinates|
+
 ```
 
 ```bash
@@ -321,9 +326,12 @@ If environment variables don’t load → ensure:
 - Ensure "type": "module" is in package.json
 
 <b>🧑‍💻 Developer </b>
-<b>Built By:<b> Priyanka
-<b> Role:</b>AI Engineer Intern Candidate — PM Accelerator
-<b>Program Description:<b>Product Manager Accelerator — Building practical PM & engineering skills
-<b>Website:</b>https://www.pmaccelerator.io/
+<b>Built By: </b> Priyanka
+
+<b> Role: </b>AI Engineer Intern Candidate — PM Accelerator
+
+<b>Program Description: /<b>Product Manager Accelerator — Building practical PM & engineering skills
+
+<b>Website: </b>https://www.pmaccelerator.io/
 
 
