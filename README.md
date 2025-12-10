@@ -91,7 +91,22 @@ Users update:
 - dotenv for environment variables
 - Browser Geolocation API
 
-
+<strong>✔ Installation & Project Structure</strong>
+```bash
+backend/
+│── config/db.js
+│── routes/weatherRoutes.js
+│── services/weatherService.js
+│── services/exportService.js
+│── models/WeatherRequest.js
+│── server.js
+frontend/
+│── index.html
+│── app.js
+│── style.css
+.env.example
+gitignore
+```
 
 # API Integrations
 1. OpenWeatherMap API
@@ -111,8 +126,7 @@ Weather properties fetched:
 
 3. Geolocation API
 - Fetches weather of user’s current location.
-
-
+- 
 # ⭐ Backend Features
 
 ✔ POST /api/weather — Create Weather Record
