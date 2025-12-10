@@ -145,9 +145,6 @@ Weather properties fetched:
 ✔ GET /api/weather — Read All 
 - Returns all records sorted by date.
 
-✔ GET /api/weather/:id — Read One
-- Fetches a single specific weather entry.
-
 ✔ PUT /api/weather/:id — Update
 - Users can update:
 - Location
