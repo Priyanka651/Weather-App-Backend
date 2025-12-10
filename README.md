@@ -81,8 +81,10 @@ Users update:
 - Wind speed
 
 <strong>📈Smart Date Validation</strong>
-<b>Frontend calendar restricts dates to:<b>
+<b>Frontend calendar restricts dates to:</b>
 - Tomorrow → Tomorrow + 4 days (total 5 days)
+Both frontend and backend strictly enforce a 1–5 day date range: the calendars only allow selecting tomorrow through tomorrow + 4 days, and the backend rejects any request where the date range is invalid or longer than 5 days.
+
 
 <strong>🗺 Google Maps Integration </strong>
 - Every record includes a clickable location link.
@@ -160,12 +162,14 @@ weather-app/
 # ⭐ Backend Features
 
 <b>✔ POST /api/weather — Create Weather Record<b>
-“Only the forecast days within the selected date range are stored in MongoDB.”
 - Receives: location, startDate, endDate
 - Validates date range (1–5 days)
+- Fetches forecast from OpenWeather → filters relevant dates
+- The backend extracts one forecast per day at 12:00 PM from OpenWeather’s 3-hour interval 5-day API.
 - Builds Google Maps URL
-- Fetches forecast from OpenWeather → filters relevant dates  
-The backend extracts one forecast per day at 12:00 PM from OpenWeather’s 3-hour interval 5-day API.
+- Saves cleaned data to MongoDB  
+“Only the forecast days within the selected date range are stored in MongoDB.”
+
 
   
 - Stores in MongoDB:
@@ -334,8 +338,7 @@ If environment variables don’t load → ensure:
 
 <b> Role: </b>AI Engineer Intern Candidate — PM Accelerator
 
-<b>Program Description: /<b>Product Manager Accelerator — Building practical PM & engineering skills
-
+<b>Program Description:</b> Product Manager Accelerator — Building practical PM & engineering skills
 <b>Website: </b>https://www.pmaccelerator.io/
 
 
