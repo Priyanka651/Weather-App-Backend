@@ -23,7 +23,7 @@ const endDateInput = document.getElementById("EndDate");
 
 
 // ==================================================
-// ⭐ LIMIT BOTH CALENDARS TO: TOMORROW → TOMORROW + 4 DAYS
+//  LIMIT BOTH CALENDARS TO: TOMORROW → TOMORROW + 4 DAYS
 // ==================================================
 
 // Today at midnight
@@ -42,7 +42,7 @@ maxDate.setDate(today.getDate() + 5);
 const minDateStr = tomorrow.toISOString().split("T")[0];
 const maxDateStr = maxDate.toISOString().split("T")[0];
 
-// ⭐ APPLY LIMIT TO BOTH CALENDARS
+//  APPLY LIMIT TO BOTH CALENDARS
 startDateInput.min = minDateStr;
 startDateInput.max = maxDateStr;
 
@@ -51,7 +51,7 @@ endDateInput.max = maxDateStr;
 
 
 // ==================================================
-// ⭐ WHEN USER SELECTS START DATE → AUTO-FIX END DATE
+//  WHEN USER SELECTS START DATE → AUTO-FIX END DATE
 // ==================================================
 startDateInput.addEventListener("change", () => {
     if (endDateInput.value < startDateInput.value ||
@@ -70,7 +70,9 @@ form.addEventListener("submit", async function (event) {
     const startDate = startDateInput.value;
     const endDate = endDateInput.value;
 
+
     resultDiv.innerHTML = "";
+//if location is empty
 
     if (!location) {
         resultDiv.textContent = "Please enter a location.";
@@ -92,15 +94,15 @@ form.addEventListener("submit", async function (event) {
         }
 
         // ==========================================
-        // 🟦 UPDATED — SHOW MULTI-DAY FORECAST
+        //  SHOW MULTI-DAY FORECAST
         // ==========================================
         let html = `<h2>Weather Forecast: ${data.normalizedLocation}</h2>`;
 
     data.temperatures.forEach((day) => {
-    const cleanDate = new Date(day.date).toISOString().split("T")[0];  // ⭐ CLEAN DATE
+    const cleanDate = new Date(day.date).toISOString().split("T")[0];
 
     html += `
-        <p><strong>Date:</strong> ${cleanDate}</p>   <!-- ⭐ USE cleanDate -->
+        <p><strong>Date:</strong> ${cleanDate}</p> 
         <p><strong>Temperature:</strong> ${day.temp} °C</p>
         <p><strong>Description:</strong> ${day.description}</p>
         <p><strong>Humidity:</strong> ${day.humidity}%</p>

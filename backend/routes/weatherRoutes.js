@@ -1,4 +1,3 @@
-// routes/weather.routes.js
 import express from "express";
 import WeatherRequest from "../models/WeatherRequest.js";
 import {
@@ -12,9 +11,8 @@ const router = express.Router();
 
 
 
-
 // =============================
-// CREATE (POST)
+// CREATE (POST)— Add new weather request
 // =============================
 router.post("/", async (req, res) => {
   try {
@@ -78,7 +76,7 @@ router.post("/", async (req, res) => {
 });
 
 // =============================
-// READ ALL
+// READ ALL— GET /api/weather
 // =============================
 router.get("/", async (req, res) => {
   const records = await WeatherRequest.find().sort({ createdAt: -1 });
@@ -87,10 +85,8 @@ router.get("/", async (req, res) => {
 
 
 
-
-
 // ==========================================
-// 🔵 NEW ROUTE: LOCATION AUTOCOMPLETE
+// LOCATION AUTOCOMPLETE
 // Example: /api/weather/suggest?q=Lon
 // ==========================================
 router.get("/suggest", async (req, res) => {
@@ -121,22 +117,8 @@ router.get("/suggest", async (req, res) => {
   }
 });
 
-
-export default router;
-
-
 // =============================
-// READ ONE
-// =============================
-router.get("/:id", async (req, res) => {
-  const record = await WeatherRequest.findById(req.params.id);
-  if (!record)
-    return res.status(404).json({ message: "Record not found" });
-  res.json(record);
-});
-
-// =============================
-// UPDATE (PUT)
+// UPDATE (PUT)— PUT /:id
 // =============================
 router.put("/:id", async (req, res) => {
   try {
@@ -258,3 +240,4 @@ router.post("/current", async (req, res) => {
   }
 });
 
+export default router;
