@@ -5,8 +5,9 @@ Designed for the PM Accelerator — AI Engineer Intern Technical Assessment
 A full-stack weather forecasting application that lets users search weather by location, fetch a 5-day forecast, get current location weather, store results in a database, update and delete records, export weather data, and benefit from intelligent features like autocomplete suggestions, dynamic date validation, and Google Maps integration.
 
 ## Live Demo
--Frontend: https://weather-app-frontend-op5t.onrender.com
--Backend API: https://weather-app-backend-2hcd.onrender.com/api/weather
+- Frontend: https://weather-app-frontend-op5t.onrender.com
+
+- Backend API: https://weather-app-backend-2hcd.onrender.com/api/weather
 
 
 # The project demonstrates:
