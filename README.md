@@ -167,15 +167,12 @@ weather-app/
 - Fetches forecast from OpenWeather → filters relevant dates
 - The backend extracts one forecast per day at 12:00 PM from OpenWeather’s 3-hour interval 5-day API.
 - Builds Google Maps URL
- Notes: Only the forecast days within the selected date range are stored in MongoDB.
-
-
-  
-- Stores in MongoDB:
+Stores in MongoDB:
 - Temperature
 - Description
 - Humidity
 - Wind speed
+Notes: Only the forecast days within the selected date range are stored in MongoDB.
 
 <b>✔ GET /api/weather — Read All records </b>
 - Returns all records sorted by date.
