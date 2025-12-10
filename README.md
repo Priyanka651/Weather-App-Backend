@@ -37,8 +37,8 @@ This project simulates a real-world full-stack software engineering workflow wit
 
 <strong>🌍 Search 5-Day Weather Forecast </strong>
 - Users can enter a location (City, Country, ZIP, Landmark, Coordinates)
-  Autocomplete suggestions powered by OpenWeather Geocoding API
-  Validates a strict 1–5 day date range and shows:
+- Autocomplete suggestions powered by OpenWeather Geocoding API
+- Validates a strict 1–5 day date range and shows:
 - Temperature
 - Weather description
 - Humidity
@@ -167,7 +167,6 @@ weather-app/
 - Fetches forecast from OpenWeather → filters relevant dates
 - The backend extracts one forecast per day at 12:00 PM from OpenWeather’s 3-hour interval 5-day API.
 - Builds Google Maps URL
-- Saves cleaned data to MongoDB  
 “Only the forecast days within the selected date range are stored in MongoDB.”
 
 
@@ -216,7 +215,7 @@ Exported files include only the first day’s temperature details for each recor
   
 <h1>API Endpoints</h1>
 
-```bash
+```sql
 | Method | Endpoint                    | Description                  |
 |--------|-----------------------------|------------------------------|
 | POST   | /api/weather                | Create weather record        |
