@@ -209,6 +209,24 @@ router.get("/export/:format", async (req, res) => {
 });
 
 // =============================
+// READ ONE RECORD — GET /api/weather/:id
+// =============================
+router.get("/:id", async (req, res) => {
+  try {
+    const record = await WeatherRequest.findById(req.params.id);
+
+    if (!record) {
+      return res.status(404).json({ message: "Record not found" });
+    }
+
+    res.json(record);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
+// =============================
 // CURRENT LOCATION WEATHER
 // =============================
 router.post("/current", async (req, res) => {
