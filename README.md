@@ -144,7 +144,18 @@ Weather properties fetched:
 3. Geolocation API
 - Fetches weather of user’s current location.
 
-  
+
+<strong>📌 API Summary<strong>
+
+| API | Purpose | Why It's Important |
+|-----|---------|--------------------|
+| Geocoding API | Convert location text to lat/lon | Powers autocomplete & validates location |
+| 5-Day Forecast API | Fetch multi-day forecast | Enables date-range weather search |
+| Current Weather API | Live weather for coordinates | Supports 'Current Location Weather' |
+| Google Maps URL | Show map of searched location | Adds clarity & usability |
+| Browser Geolocation API | Detect user’s GPS | Enables instant local weather |
+
+
 <strong>✔ Installation & Project Structure</strong>
 
 ```bash
