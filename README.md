@@ -147,13 +147,13 @@ Weather properties fetched:
 
 <strong>📌 API Summary<strong>
 
-| API | Purpose | Why It's Important |
-|-----|---------|--------------------|
-| Geocoding API | Convert location text to lat/lon | Powers autocomplete & validates location |
-| 5-Day Forecast API | Fetch multi-day forecast | Enables date-range weather search |
-| Current Weather API | Live weather for coordinates | Supports 'Current Location Weather' |
-| Google Maps URL | Show map of searched location | Adds clarity & usability |
-| Browser Geolocation API | Detect user’s GPS | Enables instant local weather |
+| API                         | Purpose                          | Why It's Important                                 |
+|----------------------------|----------------------------------|----------------------------------------------------|
+| **Geocoding API**           | Convert user input into lat/lon   | Validates location and powers autocomplete          |
+| **5-Day Forecast API**      | Retrieve multi-day weather data   | Enables date-range weather forecasting              |
+| **Current Weather API**     | Get real-time weather information | Supports the GPS “current location” feature         |
+| **Google Maps URL**         | Display searched place on a map   | Adds usability and geographic clarity               |
+| **Browser Geolocation API** | Detect the user’s current location| Enables instant weather from the user’s GPS         |
 
 
 <strong>✔ Installation & Project Structure</strong>
