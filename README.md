@@ -1,4 +1,4 @@
-#  Weather App — Full-Stack Project (Frontend + Backend)
+# 🌦️ Weather App — Full-Stack Project (Frontend + Backend)
 Built with Node.js, Express.js, MongoDB, HTML/CSS/JavaScript
 Designed for the PM Accelerator — AI Engineer Intern Technical Assessment
 
@@ -353,6 +353,8 @@ ensure:
 <b> Role: </b>AI Engineer Intern Candidate — PM Accelerator
 
 <b>Program Description:</b> Product Manager Accelerator — Building practical PM & engineering skills
-<b>Website: </b>https://www.pmaccelerator.io/
+<b>Website info: </b>
+
+<a href="https://www.pmaccelerator.io/">Click Here</a>
 
 
